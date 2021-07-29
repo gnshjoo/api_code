@@ -81,7 +81,7 @@
         }
       ```
    
-   GET */users/verify/[<types>]/[<code>]*
+   GET */users/verify/[< types >]/[< code >]*
    types = (signup or reset)
    body
       ```json
