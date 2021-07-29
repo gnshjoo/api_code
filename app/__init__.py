@@ -20,5 +20,4 @@ def shutdown_session(exception=None):
 app.register_blueprint(users, url_prefix='/users')
 
 if __name__ == '__main__':
-    # 때에 따라 processes=# 옵션사용가능. threaded 와는 함께 사용하지 못함
     app.run(host='0.0.0.0', port=8080, debug=True)
