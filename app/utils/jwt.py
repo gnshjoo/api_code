@@ -13,7 +13,7 @@ def generator_token(email):
     }
 
     token = jwt.encode(payload, SECRET_KEY, ALGORITHM)
-    return token.decode('utf-8')
+    return token
 
 
 def verify_token(token):

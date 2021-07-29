@@ -10,6 +10,6 @@ def login_user(email, password):
         if check_password(password, user_info.password):
             return {"access_token": generator_token(email)}
         else:
-            return "password not match"
+            return {"message": "password not match"}
     else:
-        return "user not exist"
+        return {"message": "user not exist"}

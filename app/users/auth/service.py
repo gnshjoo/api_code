@@ -19,10 +19,10 @@ def generator_code_phone(phone, type):
         db_session.add(user_info)
     except Exception as e:
         print(e)
-        return "you already received code"
+        return {"message": "you already received code"}
 
     db_session.commit()
-    return code
+    return {"message": code}
 
 
 def verify_code_phone(types, code):
@@ -33,7 +33,7 @@ def verify_code_phone(types, code):
         db_session.query(Code).filter(Code.code == code).delete()
         db_session.commit()
 
-        return "phone verified"
+        return {"message": "phone verified"}
 
     else:
-        return "code is not verified"
+        return {"message": "code is not verified"}

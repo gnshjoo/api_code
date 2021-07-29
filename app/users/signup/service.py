@@ -15,10 +15,10 @@ def create_user(email, nickname, name, password, phone):
         user_info.name = name
         user_info.password = hashed_password(password)
         db_session.commit()
-        return f'{email} user created'
+        return {"message": f'{email} user created'}
     except NoResultFound:
-        return "You don't verify phone"
+        return {"message": "You don't verify phone"}
 
     except Exception as e:
         print(e)
-        return "create User failed"
+        return {"message": "create User failed"}

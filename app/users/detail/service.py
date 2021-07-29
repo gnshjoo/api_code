@@ -16,6 +16,6 @@ def get_detail(token):
                 "phone": user_info.phone,
             }
         except NoResultFound:
-            return "user_not_found"
+            return {"message": "user_not_found"}
     else:
-        return "token is expired, please login again"
+        return {"message": "token is expired, please login again"}

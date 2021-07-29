@@ -15,13 +15,13 @@ def reset_password(b_pass, n_pass, token):
                 if check_password(b_pass, user_info.password):
                     user_info.password = hashed_password(n_pass)
                     sql_session.commit()
-                    return "password changed, please login again"
+                    return {"message": "password changed, please login again"}
                 else:
-                    return "password not match"
+                    return {"message": "password not match"}
             else:
-                return "Should verify phone"
+                return {"message": "Should verify phone"}
         else:
-            return "user not exist"
+            return {"message": "user not exist"}
     except Exception as e:
         print(e)
-        return "Internal Server Error"
+        return {"message": "Internal Server Error"}
